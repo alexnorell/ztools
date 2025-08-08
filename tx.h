@@ -367,7 +367,7 @@ extern int property_size_mask;
 
 extern zbyte_t *datap;
 
-extern option_inform;
+extern int option_inform;
 
 extern unsigned long file_size;
 
@@ -383,6 +383,18 @@ zword_t read_data_word (unsigned long *);
 void tx_printf (const char *, ...);
 void tx_fix_margin (int);
 void tx_set_width (int);
+void init_symbols (const char *);
+void configure_inform_tables(unsigned long, unsigned short *, unsigned long *, unsigned long *,
+                            unsigned long *, unsigned long *, unsigned long *, unsigned long *);
+int print_attribute_name(unsigned long, int);
+int print_property_name(unsigned long, int);
+void configure_object_tables (unsigned int *, unsigned long *, unsigned long *,
+                             unsigned long *, unsigned long *);
+int print_inform_action_name(unsigned long, int);
+int print_inform_attribute_name(unsigned long, int);
+int print_inform_property_name(unsigned long, int);
+int print_local_name(unsigned long, int);
+int print_global_name(unsigned long, int);
 #else
 int decode_text ();
 void close_story ();
@@ -395,6 +407,16 @@ zword_t read_data_word ();
 void tx_printf ();
 void tx_fix_margin ();
 void tx_set_width ();
+void init_symbols ();
+void configure_inform_tables();
+int print_attribute_name();
+int print_property_name();
+void configure_object_tables ();
+int print_inform_action_name();
+int print_inform_attribute_name();
+int print_inform_property_name();
+int print_local_name();
+int print_global_name();
 #endif
 
 /* Inform version codes */

@@ -97,7 +97,7 @@ char *tname;
  * Prints the name of the attribute, if known.
  */
 #ifdef __STDC__
-void init_symbols(char *fname)
+void init_symbols(const char *fname)
 #else
 void init_symbols(fname)
 char *fname;
@@ -289,7 +289,7 @@ int prop_no;
 #endif
 {
 	if (property_names_base) {
-		return print_inform_attribute_name(property_names_base, prop_no);
+		return print_inform_property_name(property_names_base, prop_no);
 	}
 	else if ((prop_no < property_entries) && property_names_table[prop_no].symtype == sym_property) {
 		tx_printf(property_names_table[prop_no].name);
@@ -307,8 +307,8 @@ unsigned long start_of_routine;
 int local_no;
 #endif
 {
-	start_of_routine;
-	local_no;
+	(void)start_of_routine;
+	(void)local_no;
 	return 0;
 }
 
@@ -321,7 +321,7 @@ unsigned long start_of_routine;
 int global_no;
 #endif
 {
-	start_of_routine;
+	(void)start_of_routine;
 	if ((global_no < global_entries) && global_names_table[global_no].symtype == sym_global) {
 		tx_printf(global_names_table[global_no].name);
 		return 1;

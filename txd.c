@@ -1878,7 +1878,7 @@ unsigned long *addr;
 
 }/* print_text */
 
-#ifdef __STDC___
+#ifdef __STDC__
 static void print_integer (unsigned int value, int flag)
 #else
 static void print_integer (value, flag)
